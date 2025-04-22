@@ -4,6 +4,8 @@
 
 #ifndef DSA_SORT_H
 #define DSA_SORT_H
+#include <vector>
+#include <algorithm> // 用于 std::sort
 
 template< typename T>
 void Swap(T& a,T& b){ 
@@ -380,6 +382,38 @@ void radixSort(int arr[], int n) {
     // 按每个位（从低位到高位）进行计数排序
     for (int digitPlace = 1; maxVal / digitPlace > 0; digitPlace *= 10) {
         countingSortForRadix(arr, n, digitPlace);
+    }
+}
+
+template<typename T>
+void bucketSort(T arr[], int n) {
+    if (n <= 0) return;
+
+    // 找到数组中的最大值和最小值
+    T maxVal = *std::max_element(arr, arr + n);
+    T minVal = *std::min_element(arr, arr + n);
+
+    // 计算桶的数量
+    int bucketCount = n; // 通常选择与数组大小相同的桶数量
+    std::vector<std::vector<T>> buckets(bucketCount);
+
+    // 将每个元素分配到对应的桶中
+    for (int i = 0; i < n; i++) {
+        int bucketIndex = (arr[i] - minVal) * (bucketCount - 1) / (maxVal - minVal);
+        buckets[bucketIndex].push_back(arr[i]);
+    }
+
+    // 对每个桶中的数据进行排序
+    for (int i = 0; i < bucketCount; i++) {
+        std::sort(buckets[i].begin(), buckets[i].end());
+    }
+
+    // 合并所有桶中的数据到原数组
+    int index = 0;
+    for (int i = 0; i < bucketCount; i++) {
+        for (size_t j = 0; j < buckets[i].size(); j++) {
+            arr[index++] = buckets[i][j];
+        }
     }
 }
 #endif //DSA_SORT_H
