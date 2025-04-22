@@ -1,0 +1,8 @@
+[
+{
+  "directory": "D:/Projects/DSA_CPP/build",
+  "command": "D:\\Mingw\\mingw64\\bin\\g++.exe  @CMakeFiles/SortExecutable.dir/includes_CXX.rsp -g -std=gnu++11 -o CMakeFiles\\SortExecutable.dir\\main.cpp.obj -c D:\\Projects\\DSA_CPP\\main.cpp",
+  "file": "D:/Projects/DSA_CPP/main.cpp",
+  "output": "CMakeFiles/SortExecutable.dir/main.cpp.obj"
+}
+]
