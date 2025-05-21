@@ -9,13 +9,13 @@ unsigned int lcsRecursion(char const * A, int n, char const * B, int m);
 
 /******************************************************************************************
  * Longest Common Subsequence
- * Example test cases:
+ * Example Test cases:
  *    HNAJBJDJU   LDVFGDKD
  *    ZEIEZCCTPZ   WPUZALLPBXL
  ******************************************************************************************/
 int main ( int argc, char* argv[] ) {
-   srand((unsigned int)time(NULL)); //Ëæ»úÖÖ×Ó
-   //srand( 31415926 ); //¹Ì¶¨ÖÖ×Ó£¨¼ÙÖÖ×Ó£¬µ÷ÊÔÓÃ£© //..\..\_output\LCS\LCS.txt
+   srand((unsigned int)time(NULL)); //ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½
+   //srand( 31415926 ); //ï¿½Ì¶ï¿½ï¿½ï¿½ï¿½Ó£ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ó£ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ã£ï¿½ //..\..\_output\LCS\LCS.txt
    int errors = 0, tests = 100;
    for ( int k = 0; k < tests; k++ ) {
       printf("\n%d\n", k);

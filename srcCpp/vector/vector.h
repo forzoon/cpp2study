@@ -25,7 +25,7 @@ protected:
    void mergeSort ( Rank lo, Rank hi ); //归并排序算法
    void heapSort ( Rank lo, Rank hi ); //堆排序（稍后结合完全堆讲解）
    Rank partition ( Rank lo, Rank hi ); //轴点构造算法
-   void quickSort ( Rank lo, Rank hi ); //快速排序算法
+   void quickSort(); //快速排序算法
    void shellSort ( Rank lo, Rank hi ); //希尔排序算法
 public:
 // 构造方法

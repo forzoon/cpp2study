@@ -20,7 +20,7 @@ __int64 done = 0;
 __int64 all = 0;
 
 /******************************************************************************************
- * ÅÅÐòËã·¨ÍêÈ«²âÊÔ
+ * ï¿½ï¿½ï¿½ï¿½ï¿½ã·¨ï¿½ï¿½È«ï¿½ï¿½ï¿½ï¿½
  ******************************************************************************************/
 int test( Vector<Rank>& A, Rank n ) {
    if ( n < 2 ) {
@@ -48,10 +48,10 @@ int sorterTest( Rank n ) {
 
 int main( int argc, char* argv[] ) {
    if ( 2 > argc ) { printf( "Usage:\n\t%s <sequence length> \a\a\n", argv[0] ); return 1; }
-   srand( (unsigned int)time( NULL ) ); //Ëæ»úÖÖ×Ó
-   //srand( 31415926 ); //¹Ì¶¨ÖÖ×Ó£¨¼ÙÖÖ×Ó£¬µ÷ÊÔÓÃ£©
+   srand( (unsigned int)time( NULL ) ); //ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½
+   //srand( 31415926 ); //ï¿½Ì¶ï¿½ï¿½ï¿½ï¿½Ó£ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ó£ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ã£ï¿½
    int tests = abs( atoi( argv[1] ) );
-   printf( "test length = %d\n", tests );
+   printf( "Test length = %d\n", tests );
    all = facI( tests );
    sorterTest( tests ); printf( "%I64d / %I64d passed\n", passed, all );
    return 0;

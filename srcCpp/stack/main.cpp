@@ -11,32 +11,32 @@
  ******************************************************************************************/
 #include "stack_test.h"
 
-int testID = 0; //²âÊÔ±àºÅ
+int testID = 0; //ï¿½ï¿½ï¿½Ô±ï¿½ï¿½
 
 /******************************************************************************************
- * ²âÊÔÕ»
+ * ï¿½ï¿½ï¿½ï¿½Õ»
  ******************************************************************************************/
-template <typename T> //ÔªËØÀàÐÍ
+template <typename T> //Ôªï¿½ï¿½ï¿½ï¿½ï¿½ï¿½
 void testStack ( Rank n ) {
    Stack<T> S;
    printf ( "\n  ==== Test %2d. Growing stack\n", testID++ );
    while ( S.size() < n ) {
-      if ( S.empty() || ( 30 < ( rand() % 100 ) ) ) { //70%¸ÅÂÊÈëÕ»
+      if ( S.empty() || ( 30 < ( rand() % 100 ) ) ) { //70%ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Õ»
          T e = (T) dice ( 2 * n );
          printf ( "pushing " ); print ( e ); printf ( " ...\n" );
          S.push ( e );
-      } else { //30%¸ÅÂÊ³öÕ»
+      } else { //30%ï¿½ï¿½ï¿½Ê³ï¿½Õ»
          printf ( "popping with ... " ); print ( S.pop() ); printf ( "\n" );
       }
       print ( S );
    }
    printf ( "\n  ==== Test %2d. Shrinking stack\n", testID++ );
    while ( !S.empty() ) {
-      if ( 70 < dice ( 100 ) ) { //70%¸ÅÂÊÈëÕ»
+      if ( 70 < dice ( 100 ) ) { //70%ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Õ»
          T e = (T) dice ( 2 * n );
          printf ( "pushing " ); print ( e ); printf ( " ...\n" );
          S.push ( e );
-      } else { //70%¸ÅÂÊ³öÕ»
+      } else { //70%ï¿½ï¿½ï¿½Ê³ï¿½Õ»
          printf ( "popping with ... " ); print ( S.pop() ); printf ( "\n" );
       }
       print ( S );
@@ -45,12 +45,12 @@ void testStack ( Rank n ) {
 
 
 /******************************************************************************************
- * ²âÊÔÕ»
+ * ï¿½ï¿½ï¿½ï¿½Õ»
  ******************************************************************************************/
 int main ( int argc, char* argv[] ) {
-   if ( 2 > argc ) { printf ( "Usage: %s <size of test>\a\a\n", argv[0] ); return 1; }
-   srand((unsigned int)time(NULL)); //Ëæ»úÖÖ×Ó
-   //srand( 31415926 ); //¹Ì¶¨ÖÖ×Ó£¨¼ÙÖÖ×Ó£¬µ÷ÊÔÓÃ£©
-   testStack<int> ( atoi ( argv[1] ) ); //ÔªËØÀàÐÍ¿ÉÒÔÔÚÕâÀïÈÎÒâÑ¡Ôñ
+   if ( 2 > argc ) { printf ( "Usage: %s <size of Test>\a\a\n", argv[0] ); return 1; }
+   srand((unsigned int)time(NULL)); //ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½
+   //srand( 31415926 ); //ï¿½Ì¶ï¿½ï¿½ï¿½ï¿½Ó£ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ó£ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ã£ï¿½
+   testStack<int> ( atoi ( argv[1] ) ); //Ôªï¿½ï¿½ï¿½ï¿½ï¿½Í¿ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ñ¡ï¿½ï¿½
    return 0;
 }

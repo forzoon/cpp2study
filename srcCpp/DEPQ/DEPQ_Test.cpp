@@ -13,7 +13,7 @@
 #include <windows.h>
 
 /******************************************************************************************
- * Õë¶Ô»ùÓÚÁÐ±í¡¢ÏòÁ¿ÒÔ¼°×óÊ½¶ÑÊµÏÖµÄÓÅÏÈ¼¶¶ÓÁÐ£¬×ö¹ý³ÌÍ³Ò»µÄ²âÊÔ
+ * ï¿½ï¿½Ô»ï¿½ï¿½ï¿½ï¿½Ð±ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ô¼ï¿½ï¿½ï¿½Ê½ï¿½ï¿½Êµï¿½Öµï¿½ï¿½ï¿½ï¿½È¼ï¿½ï¿½ï¿½ï¿½Ð£ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Í³Ò»ï¿½Ä²ï¿½ï¿½ï¿½
  ******************************************************************************************/
 void verifySMMH( SMMH<int> H ) {
    Rank s = H.size(); Rank k = 0;
@@ -30,7 +30,7 @@ void verifySMMH( SMMH<int> H ) {
 void testSMMH( Rank n ) {
    SMMH<int> H; //init an empty DEPQ implemented as an SMMH
    /*DSA*/ print(H); printf("\n");
-   while ( H.size() < n ) { //Ëæ»ú²âÊÔ
+   while ( H.size() < n ) { //ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½
       if ( dice ( 100 ) < 70 ) { //insert with a prob. of 70%
          int e = dice ( 7 * n ); /*DSA*/printf ( "Inserting" ); print ( e ); printf ( " ...\n" );
          H.insert ( e ); /*DSA*/printf ( "Insertion done\n" );
@@ -57,14 +57,14 @@ void testSMMH( Rank n ) {
 }
 
 /******************************************************************************************
- * ÓÅÏÈ¼¶¶ÓÁÐ²âÊÔ
+ * ï¿½ï¿½ï¿½È¼ï¿½ï¿½ï¿½ï¿½Ð²ï¿½ï¿½ï¿½
  ******************************************************************************************/
 int main ( int argc, char* argv[] ) {
-   if ( 2 > argc ) { printf ( "Usage: %s <size of test>\a\a\n", argv[0] ); return 1; }
-   srand((unsigned int)time(NULL)); //Ëæ»úÖÖ×Ó
-   //srand( 31415926 ); //¹Ì¶¨ÖÖ×Ó£¨¼ÙÖÖ×Ó£¬µ÷ÊÔÓÃ£©
+   if ( 2 > argc ) { printf ( "Usage: %s <size of Test>\a\a\n", argv[0] ); return 1; }
+   srand((unsigned int)time(NULL)); //ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½
+   //srand( 31415926 ); //ï¿½Ì¶ï¿½ï¿½ï¿½ï¿½Ó£ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ó£ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ã£ï¿½
 #if defined(DSA_DEPQ_SMMH)
-   testSMMH( atoi ( argv[1] ) ); //´ÊÌõÀàÐÍ¿ÉÔÚ´ËÖ¸¶¨
+   testSMMH( atoi ( argv[1] ) ); //ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Í¿ï¿½ï¿½Ú´ï¿½Ö¸ï¿½ï¿½
 #else
    printf ( "PQ type not defined yet\n" );
 #endif

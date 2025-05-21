@@ -17,9 +17,9 @@
 template <typename T> void testRedBlack( Rank n ) {
    RedBlack<T> rb;
    while ( rb.size() < n ) {
-      T e = dice ( ( T ) n * 3 ); //[0, 3n)·¶Î§ÄÚµÄe
+      T e = dice ( ( T ) n * 3 ); //[0, 3n)ï¿½ï¿½Î§ï¿½Úµï¿½e
       switch ( dice ( 6 ) ) {
-         case 0: { //²éÕÒ£¨¸ÅÂÊ = 1/6£©
+         case 0: { //ï¿½ï¿½ï¿½Ò£ï¿½ï¿½ï¿½ï¿½ï¿½ = 1/6ï¿½ï¿½
             printf ( "Searching for " ); print ( e ); printf ( " ...\n" );
             BinNodePosi<T> p = rb.search ( e );
             p ?
@@ -28,12 +28,12 @@ template <typename T> void testRedBlack( Rank n ) {
             break;
          }
          case 1:
-         case 2: { //É¾³ý£¨¸ÅÂÊ = 2/6)
+         case 2: { //É¾ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ = 2/6)
             printf ( "Removing " ); print ( e ); printf ( " ...\n" );
             rb.remove ( e ) ? printf ( "Done\n" ), print ( rb ) : printf ( "Not exists\n" );
             break;
          }
-         default: { //²åÈë£¨¸ÅÂÊ = 3/6)
+         default: { //ï¿½ï¿½ï¿½ë£¨ï¿½ï¿½ï¿½ï¿½ = 3/6)
             printf ( "Inserting " ); print ( e ); printf ( " ...\n" );
             BinNodePosi<T> p = rb.insert ( e );
             if ( p->data != e ) { print ( p->data ); printf ( " <> " ); print ( e ); printf ( "\n" ); }
@@ -43,19 +43,19 @@ template <typename T> void testRedBlack( Rank n ) {
       }
    }
    while ( rb.size() > 0 ) {
-      T e = dice ( ( T ) n * 3 ); //[0, 3n)·¶Î§ÄÚµÄe
+      T e = dice ( ( T ) n * 3 ); //[0, 3n)ï¿½ï¿½Î§ï¿½Úµï¿½e
       printf ( "Removing " ); print ( e ); printf ( " ...\n" );
       rb.remove ( e ) ? printf ( "Done\n" ), print ( rb ) : printf ( "Not exists\n" );
    }
 }
 
 /******************************************************************************************
- * ²âÊÔÖ÷Èë¿Ú
+ * ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½
  ******************************************************************************************/
 int main( int argc, char* argv[] ) {
-   if ( 2 > argc ) { printf( "Usage: %s <size of test>\a\a\n", argv[0] ); return 1; }
-   srand((unsigned int)time(NULL)); //Ëæ»úÖÖ×Ó
-   //srand( 31415926 ); //¹Ì¶¨ÖÖ×Ó£¨¼ÙÖÖ×Ó£¬µ÷ÊÔÓÃ£©
-   testRedBlack<int>( atoi( argv[1] ) ); //ÔªËØÀàÐÍ¿ÉÒÔÔÚÕâÀïÈÎÒâÑ¡Ôñ
+   if ( 2 > argc ) { printf( "Usage: %s <size of Test>\a\a\n", argv[0] ); return 1; }
+   srand((unsigned int)time(NULL)); //ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½
+   //srand( 31415926 ); //ï¿½Ì¶ï¿½ï¿½ï¿½ï¿½Ó£ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ó£ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ã£ï¿½
+   testRedBlack<int>( atoi( argv[1] ) ); //Ôªï¿½ï¿½ï¿½ï¿½ï¿½Í¿ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ñ¡ï¿½ï¿½
    return 0;
 }

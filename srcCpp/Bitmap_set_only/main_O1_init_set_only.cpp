@@ -11,10 +11,10 @@
 #include "Bitmap/Bitmap.h"
 
 /******************************************************************************************
- * ²âÊÔÎ»Í¼
+ * ï¿½ï¿½ï¿½ï¿½Î»Í¼
  ******************************************************************************************/
 int testBitmap ( int n ) {
-   bool* B = new bool[n]; memset ( B, 0, n * sizeof ( bool ) ); //³£¹æÎ»Í¼£¬´´½¨ºóËæ¼´O(n)Ê±¼ä³õÊ¼»¯
+   bool* B = new bool[n]; memset ( B, 0, n * sizeof ( bool ) ); //ï¿½ï¿½ï¿½ï¿½Î»Í¼ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½æ¼´O(n)Ê±ï¿½ï¿½ï¿½Ê¼ï¿½ï¿½
    Bitmap M ( n );
    for ( int i = 0; i < 9 * n; i++ ) {
       Rank k = dice ( n );
@@ -36,10 +36,10 @@ int testBitmap ( int n ) {
 }
 
 /******************************************************************************************
- * ²âÊÔÎ»Í¼
+ * ï¿½ï¿½ï¿½ï¿½Î»Í¼
  ******************************************************************************************/
 int main ( int argc, char* argv[] ) {
-   if ( 2 > argc ) { printf ( "Usage: %s <size of test>\a\a\n", argv[0] ); return 1; }
-   srand ( ( unsigned int ) time ( NULL ) ); //ÉèÖÃËæ»úÖÖ×Ó
-   return testBitmap ( atoi ( argv[1] ) ); //Æô¶¯²âÊÔ
+   if ( 2 > argc ) { printf ( "Usage: %s <size of Test>\a\a\n", argv[0] ); return 1; }
+   srand ( ( unsigned int ) time ( NULL ) ); //ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½
+   return testBitmap ( atoi ( argv[1] ) ); //ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½
 }

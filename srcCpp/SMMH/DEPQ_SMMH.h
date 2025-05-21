@@ -8,11 +8,11 @@
 
 #pragma once
 
-#include "Vector/Vector.h" //╫ХжЗ╤Южь╪лЁп╩Зжфё╛╩ЫсзоРа©
-#include "DEPQ/DEPQ.h" //╟╢уусеох╪╤╤сапADTй╣ож╣д
+#include "Vector/Vector.h" //О©╫О©╫О©╫О©╫О©╫О©╫О©╫ь╪лЁп╩О©╫О©╫фёО©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫
+#include "DEPQ/DEPQ.h" //О©╫О©╫О©╫О©╫О©╫О©╫О©╫х╪О©╫О©╫О©╫О©╫О©╫ADTй╣О©╫ж╣О©╫
 
 template <typename T> class SMMH : public DEPQ<T>, public Vector<T> { //Symmetric Min-Max Heap
-   /*DSA*/friend class UniPrint; //For test. Just remove this line for real applications
+   /*DSA*/friend class UniPrint; //For Test. Just remove this line for real applications
 protected:
    //void heapify ( Rank n ); //Floyd's heapification
 public:

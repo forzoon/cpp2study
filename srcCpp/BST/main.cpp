@@ -18,30 +18,30 @@ template <typename T> void testBST ( Rank n ) {
    if ( n < 1 ) return;
    BST<T> bst;
 //
-   while ( bst.size() < n ) bst.insert ( dice ( ( T ) n * 3 ) ); print ( bst ); //Ëæ»ú´´½¨
-   bst.stretchToLPath(); print ( bst ); //ÉìÖ±³ÉÆ²
-   while ( !bst.empty() ) bst.remove ( bst.root()->data ); //Çå¿Õ
+   while ( bst.size() < n ) bst.insert ( dice ( ( T ) n * 3 ) ); print ( bst ); //ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½
+   bst.stretchToLPath(); print ( bst ); //ï¿½ï¿½Ö±ï¿½ï¿½Æ²
+   while ( !bst.empty() ) bst.remove ( bst.root()->data ); //ï¿½ï¿½ï¿½
 //
-   while ( bst.size() < n ) bst.insert ( dice ( ( T ) n * 3 ) ); print ( bst ); //Ëæ»ú´´½¨
-   bst.stretchToRPath(); print ( bst ); //ÉìÖ±³ÉÞà
-   while ( !bst.empty() ) bst.remove ( bst.root()->data ); //Çå¿Õ
+   while ( bst.size() < n ) bst.insert ( dice ( ( T ) n * 3 ) ); print ( bst ); //ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½
+   bst.stretchToRPath(); print ( bst ); //ï¿½ï¿½Ö±ï¿½ï¿½ï¿½ï¿½
+   while ( !bst.empty() ) bst.remove ( bst.root()->data ); //ï¿½ï¿½ï¿½
 //
-   while ( bst.size() < n ) bst.insert ( dice ( ( T ) n * 3 ) ); print ( bst ); //Ëæ»ú´´½¨
-   stretchByZig( bst.root()->lc ); //×ó×ÓÊ÷ÉìÖ±³ÉÞà
-   stretchByZag( bst.root()->rc ); //ÓÒ×ÓÊ÷ÉìÖ±³ÉÆ²
+   while ( bst.size() < n ) bst.insert ( dice ( ( T ) n * 3 ) ); print ( bst ); //ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½
+   stretchByZig( bst.root()->lc ); //ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ö±ï¿½ï¿½ï¿½ï¿½
+   stretchByZag( bst.root()->rc ); //ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ö±ï¿½ï¿½Æ²
    print ( bst );
-   while ( !bst.empty() ) bst.remove ( bst.root()->data ); //Çå¿Õ
+   while ( !bst.empty() ) bst.remove ( bst.root()->data ); //ï¿½ï¿½ï¿½
 //
-   while ( bst.size() < n ) bst.insert ( dice ( ( T ) n * 3 ) ); print ( bst ); //Ëæ»ú´´½¨
-   stretchByZag( bst.root()->lc ); //×ó×ÓÊ÷ÉìÖ±³ÉÆ²
-   stretchByZig( bst.root()->rc ); //ÓÒ×ÓÊ÷ÉìÖ±³ÉÞà
+   while ( bst.size() < n ) bst.insert ( dice ( ( T ) n * 3 ) ); print ( bst ); //ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½
+   stretchByZag( bst.root()->lc ); //ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ö±ï¿½ï¿½Æ²
+   stretchByZig( bst.root()->rc ); //ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ö±ï¿½ï¿½ï¿½ï¿½
    print ( bst );
-   while ( !bst.empty() ) bst.remove ( bst.root()->data ); //Çå¿Õ
+   while ( !bst.empty() ) bst.remove ( bst.root()->data ); //ï¿½ï¿½ï¿½
 //
-   while ( bst.size() < n ) { //Ëæ»ú²åÈë¡¢²éÑ¯¡¢É¾³ý
-      T e = dice ( ( T ) n * 3 ); //[0, 3n)·¶Î§ÄÚµÄe
+   while ( bst.size() < n ) { //ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ë¡¢ï¿½ï¿½Ñ¯ï¿½ï¿½É¾ï¿½ï¿½
+      T e = dice ( ( T ) n * 3 ); //[0, 3n)ï¿½ï¿½Î§ï¿½Úµï¿½e
       switch ( dice ( 3 ) ) {
-         case 0: { //²éÕÒ£¬³É¹¦ÂÊ <= 33.3%
+         case 0: { //ï¿½ï¿½ï¿½Ò£ï¿½ï¿½É¹ï¿½ï¿½ï¿½ <= 33.3%
             printf ( "Searching for " ); print ( e ); printf ( " ... " );
             BinNodePosi<T> & p = bst.search ( e );
             p ?
@@ -49,34 +49,34 @@ template <typename T> void testBST ( Rank n ) {
             printf ( "not found\n" );
             break;
          }
-         case 1: { //É¾³ý£¬³É¹¦ÂÊ <= 33.3%
+         case 1: { //É¾ï¿½ï¿½ï¿½ï¿½ï¿½É¹ï¿½ï¿½ï¿½ <= 33.3%
             printf ( "Removing " ); print ( e ); printf ( " ... " );
             bst.remove ( e ) ?
             printf ( "Done\n" ), print ( bst ) :
             printf ( "not exists\n" );
             break;
          }
-         default: {//²åÈë£¬³É¹¦ÂÊ == 100%
+         default: {//ï¿½ï¿½ï¿½ë£¬ï¿½É¹ï¿½ï¿½ï¿½ == 100%
             printf ( "Inserting " ); print ( e ); printf ( " ... " );
             printf ( "Done with" ), print ( bst.insert ( e )->data ), printf ( "\n" ), print ( bst );
             break;
          }
       }
    }
-   while ( bst.size() > 0 ) { //Çå¿Õ
-      T e = dice ( ( T ) n * 3 ); //[0, 3n)·¶Î§ÄÚµÄe
+   while ( bst.size() > 0 ) { //ï¿½ï¿½ï¿½
+      T e = dice ( ( T ) n * 3 ); //[0, 3n)ï¿½ï¿½Î§ï¿½Úµï¿½e
       printf ( "Removing " ); print ( e ); printf ( " ... " );
       bst.remove ( e ) ? printf ( "Done\n" ), print ( bst ) : printf ( "not exists\n" );
    }
 }
 
 /******************************************************************************************
- * ²âÊÔÖ÷Èë¿Ú
+ * ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½
  ******************************************************************************************/
 int main ( int argc, char* argv[] ) {
-   if ( 2 > argc ) { printf ( "Usage: %s <size of test>\a\a\n", argv[0] ); return 1; }
-   srand((unsigned int)time(NULL)); //Ëæ»úÖÖ×Ó
-   //srand( 31415926 ); //¹Ì¶¨ÖÖ×Ó£¨¼ÙÖÖ×Ó£¬µ÷ÊÔÓÃ£©
-   testBST<int> ( atoi ( argv[1] ) ); //ÔªËØÀàÐÍ¿ÉÒÔÔÚÕâÀïÈÎÒâÑ¡Ôñ
+   if ( 2 > argc ) { printf ( "Usage: %s <size of Test>\a\a\n", argv[0] ); return 1; }
+   srand((unsigned int)time(NULL)); //ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½
+   //srand( 31415926 ); //ï¿½Ì¶ï¿½ï¿½ï¿½ï¿½Ó£ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ó£ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ã£ï¿½
+   testBST<int> ( atoi ( argv[1] ) ); //Ôªï¿½ï¿½ï¿½ï¿½ï¿½Í¿ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ñ¡ï¿½ï¿½
    return 0;
 }

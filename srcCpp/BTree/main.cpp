@@ -17,22 +17,22 @@
 template <typename T> void  testBTree ( int m, int n ) {
    BTree<T> bt ( m );
    while ( bt.size() < n ) {
-      T e = dice ( ( T ) n * 3 ); //[0, 3n)·¶Î§ÄÚµÄe
+      T e = dice ( ( T ) n * 3 ); //[0, 3n)ï¿½ï¿½Î§ï¿½Úµï¿½e
       switch ( dice ( 3 ) ) {
-         case 0: { //²éÕÒ£¬³É¹¦ÂÊ <= 33.3%
+         case 0: { //ï¿½ï¿½ï¿½Ò£ï¿½ï¿½É¹ï¿½ï¿½ï¿½ <= 33.3%
             printf ( "Searching for " ); print ( e ); printf ( " ... " );
             BTNodePosi<T> p = bt.search ( e );
             printf ( p ? "Found\n" : "Not found\n" );
             break;
          }
-         case 1: { //É¾³ý£¬³É¹¦ÂÊ <= 33.3%
+         case 1: { //É¾ï¿½ï¿½ï¿½ï¿½ï¿½É¹ï¿½ï¿½ï¿½ <= 33.3%
             printf ( "Removing " ); print ( e ); printf ( " ... " );
             bt.remove ( e ) ?
             printf ( "Done\n" ), print ( bt ) :
             printf ( "Not exists\n" );
             break;
          }
-         default: {//²åÈë£¬³É¹¦ÂÊ == 100%
+         default: {//ï¿½ï¿½ï¿½ë£¬ï¿½É¹ï¿½ï¿½ï¿½ == 100%
             printf ( "Inserting " ); print ( e ); printf ( " ... " );
             int oldSize = bt.size();
             bt.insert ( e ) ?
@@ -43,7 +43,7 @@ template <typename T> void  testBTree ( int m, int n ) {
       }
    }
    while ( bt.size() > 0 ) {
-      T e = dice ( ( T ) n * 3 ); //[0, 3n)·¶Î§ÄÚµÄe
+      T e = dice ( ( T ) n * 3 ); //[0, 3n)ï¿½ï¿½Î§ï¿½Úµï¿½e
       printf ( "Removing " ); print ( e ); printf ( " ... " );
       bt.remove ( e ) ?
       printf ( "Done\n" ), print ( bt ) :
@@ -52,14 +52,14 @@ template <typename T> void  testBTree ( int m, int n ) {
 }
 
 /******************************************************************************************
-* ²âÊÔÖ÷Èë¿Ú
+* ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½
 ******************************************************************************************/
 int main ( int argc, char* argv[] ) {
-   if ( 3 > argc ) { printf ( "Usage: %s <order of B-tree> <size of test>\a\a\n", argv[0] ); return 1; }
+   if ( 3 > argc ) { printf ( "Usage: %s <order of B-tree> <size of Test>\a\a\n", argv[0] ); return 1; }
    int m = atoi ( argv[1] ); if ( m < 3 )  { printf ( "Make sure the order (%d) is no less than 3.\a\a\n", m ); return 1; }
    int size = atoi ( argv[2] ); if ( size < 0 )  { printf ( "Make sure the size (%d) is no less than 0.\a\a\n", size ); return 1; }
    srand ( ( unsigned int ) time ( NULL ) );
-   //srand( 31415926 ); //¹Ì¶¨ÖÖ×Ó
-   testBTree<int> ( atoi ( argv[1] ), atoi ( argv[2] ) ); //ÔªËØÀàÐÍ¡¢±È½ÏÆ÷¿ÉÒÔÔÚÕâÀïÈÎÒâÑ¡Ôñ
+   //srand( 31415926 ); //ï¿½Ì¶ï¿½ï¿½ï¿½ï¿½ï¿½
+   testBTree<int> ( atoi ( argv[1] ), atoi ( argv[2] ) ); //Ôªï¿½ï¿½ï¿½ï¿½ï¿½Í¡ï¿½ï¿½È½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ñ¡ï¿½ï¿½
    return 0;
 }

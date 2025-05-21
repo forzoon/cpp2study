@@ -16,7 +16,7 @@
 /*DSA*/void bubblesort2 ( int A[], int n ); //algorithm#2
 
 /******************************************************************************************
- * ¹¹ÔìËæ»úÊý×é£¨¿É¸ù¾Ý²âÊÔÐèÒªÏàÓ¦µØ¸ÄÐ´£©
+ * ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½é£¨ï¿½É¸ï¿½ï¿½Ý²ï¿½ï¿½ï¿½ï¿½ï¿½Òªï¿½ï¿½Ó¦ï¿½Ø¸ï¿½Ð´ï¿½ï¿½
  ******************************************************************************************/
 void randomArray ( int A[], int n, int seed ) {
    srand(seed);
@@ -25,10 +25,10 @@ void randomArray ( int A[], int n, int seed ) {
 }
 
 /******************************************************************************************
- * ÆðÅÝÅÅÐò²âÊÔ³ÌÐò
+ * ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ô³ï¿½ï¿½ï¿½
  ******************************************************************************************/
 int main ( int argc, char* argv[] ) {
-   if ( 2 > argc ) { printf ( "Usage: %s <size of test>\a\a\n", argv[0] ); return 1; }
+   if ( 2 > argc ) { printf ( "Usage: %s <size of Test>\a\a\n", argv[0] ); return 1; }
    int n = atoi ( argv[1] ); if ( n < 0 ) n = 0; //make sure length is non-negative
    int* A = new int[ n ]; //allocate an array of size n
    unsigned int seed = ( unsigned int ) time ( NULL ); //A same seed is used here to compare different algorithms

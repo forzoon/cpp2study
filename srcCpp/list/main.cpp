@@ -11,13 +11,13 @@
  ******************************************************************************************/
 #include "list_test.h"
 
-Rank testID = 0; //²âÊÔ±àºÅ
+Rank testID = 0; //ï¿½ï¿½ï¿½Ô±ï¿½ï¿½
 
 /******************************************************************************************
- * Ëæ»úÉú³É³¤¶ÈÎªnµÄÁÐ±í£¨ÆäÖÐ¿ÉÄÜ°üº¬ÖØ¸´½Úµã£©
+ * ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½É³ï¿½ï¿½ï¿½Îªnï¿½ï¿½ï¿½Ð±ï¿½ï¿½ï¿½ï¿½Ð¿ï¿½ï¿½Ü°ï¿½ï¿½ï¿½ï¿½Ø¸ï¿½ï¿½Úµã£©
  ******************************************************************************************/
-template <typename T> //ÔªËØÀàÐÍ
-void randomList ( List<T> & list, Rank n ) { //´´½¨³¤¶ÈÎªnµÄÁÐ±í£¬ÆäÔªËØËæ»úÈ¡×Ô[0, 4n)
+template <typename T> //Ôªï¿½ï¿½ï¿½ï¿½ï¿½ï¿½
+void randomList ( List<T> & list, Rank n ) { //ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Îªnï¿½ï¿½ï¿½Ð±ï¿½ï¿½ï¿½Ôªï¿½ï¿½ï¿½ï¿½ï¿½È¡ï¿½ï¿½[0, 4n)
    ListNodePosi<T> p =
       ( rand() % 2 )
          ? list.insertLast  ( rand() % ( T ) ( n * 4 ) )
@@ -29,7 +29,7 @@ void randomList ( List<T> & list, Rank n ) { //´´½¨³¤¶ÈÎªnµÄÁÐ±í£¬ÆäÔªËØËæ»úÈ¡×Ô
 }
 
 /******************************************************************************************
- * ²âÊÔÁÐ±í
+ * ï¿½ï¿½ï¿½ï¿½ï¿½Ð±ï¿½
  ******************************************************************************************/
 template <typename T> void testList( Rank testSize ) {
    printf("\n  ==== Test %2d. Generate a random list with %d elements\n", testID++, testSize);
@@ -82,23 +82,23 @@ template <typename T> void testList( Rank testSize ) {
    List<T> Lf ( La ); PRINT ( Lf );
 //
    printf ( "\n  ==== Test %2d. FIND in\n", testID++ ); PRINT ( Lf );
-   for ( Rank i = 0; i <= testSize * 2; i++ ) { //ÖðÒ»²âÊÔ[0, 2n]ÖÐµÄËùÓÐ¿ÉÄÜ
+   for ( Rank i = 0; i <= testSize * 2; i++ ) { //ï¿½ï¿½Ò»ï¿½ï¿½ï¿½ï¿½[0, 2n]ï¿½Ðµï¿½ï¿½ï¿½ï¿½Ð¿ï¿½ï¿½ï¿½
       ListNodePosi<T> p = Lf.find ( ( T ) i ); printf ( "Looking for " ); print ( ( T ) i ); printf ( ": " );
       if ( p ) { printf ( "found with" ); print ( p->data ); }
       else printf ( "not found" );
       printf ( "\n" );
-   } //ÕýÈ·µÄ½á¹¹Ó¦¸ÃÊÇ´óÖÂ£¨n+1´Î£©Ê§°Ü¡¢£¨n´Î£©³É¹¦Ïà¼ä
+   } //ï¿½ï¿½È·ï¿½Ä½á¹¹Ó¦ï¿½ï¿½ï¿½Ç´ï¿½ï¿½Â£ï¿½n+1ï¿½Î£ï¿½Ê§ï¿½Ü¡ï¿½ï¿½ï¿½nï¿½Î£ï¿½ï¿½É¹ï¿½ï¿½ï¿½ï¿½
 //
    printf ( "\n  ==== Test %2d. Sort\n", testID++ ); PRINT ( La );
    La.sort(); PRINT ( La );
 //
    printf ( "\n  ==== Test %2d. SEARCH in\n", testID++ ); PRINT ( La );
-   for ( Rank i = 0; i <= testSize * 2; i++ ) { //ÖðÒ»²âÊÔ[0, 2n]ÖÐµÄËùÓÐ¿ÉÄÜ
+   for ( Rank i = 0; i <= testSize * 2; i++ ) { //ï¿½ï¿½Ò»ï¿½ï¿½ï¿½ï¿½[0, 2n]ï¿½Ðµï¿½ï¿½ï¿½ï¿½Ð¿ï¿½ï¿½ï¿½
       ListNodePosi<T> p = La.search ( ( T ) i ); printf ( "Looking for " ); print ( ( T ) i ); printf ( ": " );
       printf( ( La.valid( p ) && ( (T)i == p->data ) ) ? "found at" : "failed at" );
       La.valid( p ) ? print( p->data ) : print( "head" );
       printf ( "\n" );
-   } //ÕýÈ·µÄ½á¹¹Ó¦¸ÃÊÇ´óÖÂ£¨n+1´Î£©Ê§°Ü¡¢£¨n´Î£©³É¹¦Ïà¼ä
+   } //ï¿½ï¿½È·ï¿½Ä½á¹¹Ó¦ï¿½ï¿½ï¿½Ç´ï¿½ï¿½Â£ï¿½n+1ï¿½Î£ï¿½Ê§ï¿½Ü¡ï¿½ï¿½ï¿½nï¿½Î£ï¿½ï¿½É¹ï¿½ï¿½ï¿½ï¿½
 //
    printf ( "\n  ==== Test %2d. Remove redundancy in\n", testID++ ); PRINT ( La );
    printf ( "%d node(s) removed\n", La.uniquify() ); PRINT ( La ); La.reverse(); PRINT ( La );
@@ -113,12 +113,12 @@ template <typename T> void testList( Rank testSize ) {
 }
 
 /******************************************************************************************
- * ²âÊÔÁÐ±í
+ * ï¿½ï¿½ï¿½ï¿½ï¿½Ð±ï¿½
  ******************************************************************************************/
 int main ( int argc, char* argv[] ) {
-   if ( 2 > argc ) { printf ( "Usage: %s <size of test>\a\a\n", argv[0] ); return 1; }
-   srand( (unsigned int)time( NULL ) ); //Ëæ»úÖÖ×Ó
-   //srand( 31415926 ); //¹Ì¶¨ÖÖ×Ó£¨¼ÙÖÖ×Ó£¬µ÷ÊÔÓÃ£©
-   testList<int>( atoi( argv[1] ) ); //ÔªËØÀàÐÍ¿ÉÒÔÔÚÕâÀïÈÎÒâÑ¡Ôñ
+   if ( 2 > argc ) { printf ( "Usage: %s <size of Test>\a\a\n", argv[0] ); return 1; }
+   srand( (unsigned int)time( NULL ) ); //ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½
+   //srand( 31415926 ); //ï¿½Ì¶ï¿½ï¿½ï¿½ï¿½Ó£ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ó£ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ã£ï¿½
+   testList<int>( atoi( argv[1] ) ); //Ôªï¿½ï¿½ï¿½ï¿½ï¿½Í¿ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ñ¡ï¿½ï¿½
    return 0;
 }

@@ -9,13 +9,19 @@ set(CMAKE_CXX_STANDARD_REQUIRED True)
 set(CMAKE_RUNTIME_OUTPUT_DIRECTORY ${CMAKE_SOURCE_DIR}/bin)
 
 # 添加源文件
-add_executable(SortExecutable
+add_executable(Main
     main.cpp
+        Test/vector_test.cpp
+        MySTL/Vector.cpp
 
 )
 
 # 包含头文件目录
-target_include_directories(SortExecutable PRIVATE ${CMAKE_SOURCE_DIR})
+target_include_directories(Main PRIVATE
+        ${CMAKE_SOURCE_DIR}
+        ${CMAKE_SOURCE_DIR}/MySTL
+        ${CMAKE_SOURCE_DIR}/Test
+        )
 
 #cmake -S . -B build
 #cmake --build build

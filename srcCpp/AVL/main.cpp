@@ -17,9 +17,9 @@
 template <typename T> void testAVL ( Rank n ) {
    AVL<T> avl;
    while ( avl.size() < n ) {
-      T e = dice ( ( T ) n * 3 ); //[0, 3n)·¶Î§ÄÚµÄe
+      T e = dice ( ( T ) n * 3 ); //[0, 3n)ï¿½ï¿½Î§ï¿½Úµï¿½e
       switch ( dice ( 3 ) ) {
-         case 0: { //²éÕÒ£¬³É¹¦ÂÊ <= 33.3%
+         case 0: { //ï¿½ï¿½ï¿½Ò£ï¿½ï¿½É¹ï¿½ï¿½ï¿½ <= 33.3%
             printf ( "Searching for " ); print ( e ); printf ( " ...\n" );
             BinNodePosi<T> & p = avl.search ( e );
             p ?
@@ -27,12 +27,12 @@ template <typename T> void testAVL ( Rank n ) {
             printf ( "Not found\n" );
             break;
          }
-         case 1: { //É¾³ý£¬³É¹¦ÂÊ <= 33.3%
+         case 1: { //É¾ï¿½ï¿½ï¿½ï¿½ï¿½É¹ï¿½ï¿½ï¿½ <= 33.3%
             printf ( "Removing " ); print ( e ); printf ( " ...\n" );
             avl.remove ( e ) ? printf ( "Done\n" ), print ( avl ) : printf ( "Not exists\n" );
             break;
          }
-         default: {//²åÈë£¬³É¹¦ÂÊ == 100%
+         default: {//ï¿½ï¿½ï¿½ë£¬ï¿½É¹ï¿½ï¿½ï¿½ == 100%
             printf ( "Inserting " ); print ( e ); printf ( " ...\n" );
             BinNodePosi<T> p = avl.insert ( e );
             if ( p->data != e ) { print ( p->data ); printf ( " <> " ); print ( e ); printf ( "\n" ); }
@@ -42,19 +42,19 @@ template <typename T> void testAVL ( Rank n ) {
       }
    }
    while ( avl.size() > 0 ) {
-      T e = dice ( ( T ) n * 3 ); //[0, 3n)·¶Î§ÄÚµÄe
+      T e = dice ( ( T ) n * 3 ); //[0, 3n)ï¿½ï¿½Î§ï¿½Úµï¿½e
       printf ( "Removing " ); print ( e ); printf ( " ...\n" );
       avl.remove ( e ) ? printf ( "Done\n" ), print ( avl ) : printf ( "Not exists\n" );
    }
 }
 
 /******************************************************************************************
- * ²âÊÔÖ÷Èë¿Ú
+ * ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½
  ******************************************************************************************/
 int main ( int argc, char* argv[] ) {
-   if ( 2 > argc ) { printf ( "Usage: %s <size of test>\a\a\n", argv[0] ); return 1; }
-   srand((unsigned int)time(NULL)); //Ëæ»úÖÖ×Ó
-   //srand( 31415926 ); //¹Ì¶¨ÖÖ×Ó£¨¼ÙÖÖ×Ó£¬µ÷ÊÔÓÃ£©
-   testAVL<int> ( atoi ( argv[1] ) ); //ÔªËØÀàÐÍ¿ÉÒÔÔÚÕâÀïÈÎÒâÑ¡Ôñ
+   if ( 2 > argc ) { printf ( "Usage: %s <size of Test>\a\a\n", argv[0] ); return 1; }
+   srand((unsigned int)time(NULL)); //ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½
+   //srand( 31415926 ); //ï¿½Ì¶ï¿½ï¿½ï¿½ï¿½Ó£ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ó£ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ã£ï¿½
+   testAVL<int> ( atoi ( argv[1] ) ); //Ôªï¿½ï¿½ï¿½ï¿½ï¿½Í¿ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ñ¡ï¿½ï¿½
    return 0;
 }

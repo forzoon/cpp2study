@@ -13,29 +13,29 @@
 #include "skipList_test.h"
 
 /******************************************************************************************
- * ²âÊÔÌø×ª±í
+ * ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½×ªï¿½ï¿½
  ******************************************************************************************/
-template <typename K, typename V> //key¡¢value
+template <typename K, typename V> //keyï¿½ï¿½value
 void testSkiplist ( Rank n ) {
    Skiplist<K, V> L;
    while ( L.size() < n )
       switch ( dice ( 3 ) ) {
-         case 0: { //²éÕÒ£¬³É¹¦ÂÊ <= 33.3%
-            K key = dice ( ( K ) n * 3 ); //[0, 3n)·¶Î§ÄÚµÄkey
+         case 0: { //ï¿½ï¿½ï¿½Ò£ï¿½ï¿½É¹ï¿½ï¿½ï¿½ <= 33.3%
+            K key = dice ( ( K ) n * 3 ); //[0, 3n)ï¿½ï¿½Î§ï¿½Úµï¿½key
             printf ( "Searching for " ); print ( key ); printf ( " ... " );
             V* pValue = L.get ( key );
             pValue ? printf ( "found with " ), print ( *pValue ) : printf ( "Not found" ); printf ( "\n\n" );
             break;
          }
-         case 1: { //É¾³ý£¬³É¹¦ÂÊ <= 33.3%
-            K key = dice ( ( K ) n * 3 ); //[0, 3n)·¶Î§ÄÚµÄkey
+         case 1: { //É¾ï¿½ï¿½ï¿½ï¿½ï¿½É¹ï¿½ï¿½ï¿½ <= 33.3%
+            K key = dice ( ( K ) n * 3 ); //[0, 3n)ï¿½ï¿½Î§ï¿½Úµï¿½key
             printf ( "Removing " ); print ( key ); printf ( " ... " );
             if ( L.remove ( key ) ) { printf ( "Done\n" ); print(L); }
             else printf ( "Entry not exists\n\n" );
             break;
          }
-         default: {//²åÈë£¬³É¹¦ÂÊ == 100%
-            K k = dice ( ( K ) n * 3 ); V v = ( V ) 'A' + dice ( 26 ); //ÔÚ[0, 2n)*['A'~'Z']·¶Î§ÄÚµÄ´ÊÌõ
+         default: {//ï¿½ï¿½ï¿½ë£¬ï¿½É¹ï¿½ï¿½ï¿½ == 100%
+            K k = dice ( ( K ) n * 3 ); V v = ( V ) 'A' + dice ( 26 ); //ï¿½ï¿½[0, 2n)*['A'~'Z']ï¿½ï¿½Î§ï¿½ÚµÄ´ï¿½ï¿½ï¿½
             printf ( "Inserting <" ); print ( k ); printf ( "," ); print ( v ); printf ( "> ... " );
             L.put ( k, v ); printf ( "Done\n" );
             print ( L );
@@ -43,7 +43,7 @@ void testSkiplist ( Rank n ) {
          }
       }
    while ( L.size() > 0 ) {
-      K key = dice ( ( K ) n * 3 ); //[0, 3n)·¶Î§ÄÚµÄkey
+      K key = dice ( ( K ) n * 3 ); //[0, 3n)ï¿½ï¿½Î§ï¿½Úµï¿½key
       printf ( "Removing " ); print ( key ); printf ( " ... " );
       L.remove ( key ) ? printf ( "Done\n" ) : printf ( "Entry not exists\n" );
       print ( L ); printf("\n");
@@ -51,12 +51,12 @@ void testSkiplist ( Rank n ) {
 }
 
 /******************************************************************************************
- * Ö÷³ÌÐò
+ * ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½
  ******************************************************************************************/
 int main ( int argc, char* argv[] ) {
-   if ( 2 > argc ) { printf ( "Usage: %s <size of test>\a\a\n", argv[0] ); return 1; }
-   srand((unsigned int)time(NULL)); //Ëæ»úÖÖ×Ó
-   //srand( 31415926 ); //¹Ì¶¨ÖÖ×Ó£¨¼ÙÖÖ×Ó£¬µ÷ÊÔÓÃ£©
-   testSkiplist<int, char> ( atoi ( argv[1] ) ); //ÔªËØÀàÐÍ¿ÉÒÔÔÚÕâÀïÈÎÒâÑ¡Ôñ
+   if ( 2 > argc ) { printf ( "Usage: %s <size of Test>\a\a\n", argv[0] ); return 1; }
+   srand((unsigned int)time(NULL)); //ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½
+   //srand( 31415926 ); //ï¿½Ì¶ï¿½ï¿½ï¿½ï¿½Ó£ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ó£ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ã£ï¿½
+   testSkiplist<int, char> ( atoi ( argv[1] ) ); //Ôªï¿½ï¿½ï¿½ï¿½ï¿½Í¿ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ñ¡ï¿½ï¿½
    return 0;
 }
