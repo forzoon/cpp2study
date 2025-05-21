@@ -6,6 +6,7 @@ using Rank = unsigned int;
 
 template <typename T> class Vector { 
 protected:
+
    Rank _size; Rank _capacity;  T* _elem; 
    void copyFrom ( T const* A, Rank lo, Rank hi ); 
    void expand(); 
@@ -20,6 +21,7 @@ protected:
    Rank partition ( Rank lo, Rank hi ); 
    void quickSort ( Rank lo, Rank hi ); 
    void shellSort ( Rank lo, Rank hi ); 
+
 public:
 
    Vector ( Rank c = DEFAULT_CAPACITY ) 
@@ -30,11 +32,10 @@ public:
    Vector ( T const* A, Rank lo, Rank hi ) { copyFrom ( A, lo, hi ); } 
    Vector ( Vector<T> const& V ) { copyFrom ( V._elem, 0, V._size ); } 
    Vector ( Vector<T> const& V, Rank lo, Rank hi ) { copyFrom ( V._elem, lo, hi ); } 
-
    ~Vector() { delete [] _elem; } 
 
    Rank size() const { return _size; } 
-   bool empty() const { return !_size; } 
+   bool empty() const { return !_size; } //考虑0与非0的情况
    Rank find ( T const& e ) const { return find ( e, 0, _size ); } 
    Rank find ( T const& e, Rank lo, Rank hi ) const; 
    Rank select( Rank k ) { return quickSelect( _elem, _size, k ); } 
